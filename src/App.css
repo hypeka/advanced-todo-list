@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+:root{
+  --heading_color: ;
+  --white-color:#fff;
+  --primary-color:  #101010;
+  --secondary-color: #1c1c1c;
+  --tertiary-color: #12b981 ;
+  --black-color: ;
+  --font-fam1: 'Alata', sans-serif;
+}
+body{
+
+}
+p{
+  padding: 0px;
+  margin: 0px;
+}
+h1,h2,h3,h4,h5,h6{
+
+}
+h1,.h1{
+  
+}
+h2,.h2{
+
+}
+h3,.h3{
+
+}
+h4,.h4{
+
+}
+h5,.h5{
+
+}
+h6,.h6{
+
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style-type: none;
+}
+@media only screen and (min-width:320px) and (max-width:480px){
+  
+}
+@media only screen and (min-width:481px) and (max-width:768px){
+
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+
+}
+@media only screen and (min-width:1025px) and (max-width:1200px){
+
+}
+.app-main{
+  margin: 64px ;
+  font-family: var(--font-fam1);
+  color: var(--white-color);
+}
+.app-content{
+  padding:0 124px;
+}
+.header-main{
+  text-align: center;
+  background-color: var(--tertiary-color);
+  padding: 6px 0;
+  color: var(--white-color);
+}
+.body-main{
+  background-color: var(--secondary-color);
+}
+.link-to{
+
+}
+.left-body{
+  padding: 26px ;
+  border-right: 1px solid var(--white-color);
+}
+.profile-img{
+  background-color: var(--tertiary-color);
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.profile-img img{
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-left: 4px;
+  margin-top: 5px;
+}
+.left-body-content{
+
+}
