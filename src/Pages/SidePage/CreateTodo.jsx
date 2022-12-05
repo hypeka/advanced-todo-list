@@ -13,7 +13,7 @@ const CreateTodo = () => {
   const [about, setAbout] = useState("");
   const [date ,setDate] = useState(new Date());
 
-  const [todo , setTodo] = useContext(TodoContext);
+  const [todo, setTodo,importantTodo,setImportantTodo,favoriteTodo,setFavoriteTodo,completedTodo,setCompletedTodo] = useContext(TodoContext);
 
   const createTodoHandler = (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const CreateTodo = () => {
       setTodo([...todo,{
         topic:topic,
         about:about,
-        mustCompleteTime:startDate,
+        mustCompleteTime:startDate.toLocaleDateString(),
         createdOn: date.toLocaleDateString(),
       }]);
       Swal.fire({

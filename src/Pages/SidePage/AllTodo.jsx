@@ -2,7 +2,17 @@ import React, { useContext } from "react";
 import { TodoContext } from "../../Context/TodoContext";
 
 const AllTodo = () => {
-  const [todo, setTodo] = useContext(TodoContext);
+  const [todo, setTodo,importantTodo,setImportantTodo,favoriteTodo,setFavoriteTodo,completedTodo,setCompletedTodo] = useContext(TodoContext);
+
+  
+
+  const importantHandler = (e,title) => {
+    console.log(title)
+    e.preventDefault();
+    let Important = todo.filter(item => item.title === title);
+    // setImportantTodo(Important);
+    console.log(Important)
+  }
 
   return (
     <div className="body-content">
@@ -23,12 +33,13 @@ const AllTodo = () => {
                       <p className="created-at">Created at : {get.createdOn}</p>
                       <h3>{get.topic}</h3>
                       <p className="about-card">{get.about}</p>
+                      <p className="created-at">Must Complete On : {get.mustCompleteTime}</p>
                     </div>
                   </div>
                   <div className="col-md-3">
                     <ul>
                       <li className="card-li">
-                        <p className="card-p">
+                        <p className="card-p" onClick={(e) => importantHandler(e,get.topic)}>
                           <span>
                             <i class="fa-solid fa-bookmark"></i>
                           </span>{" "}
@@ -48,7 +59,7 @@ const AllTodo = () => {
                           <span>
                             <i class="fa-solid fa-check"></i>
                           </span>
-                          Completed
+                          Complete
                         </p>
                       </li>
                     </ul>

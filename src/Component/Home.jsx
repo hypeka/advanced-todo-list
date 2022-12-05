@@ -6,7 +6,7 @@ import HomeRoutes from "../Routes/HomeRoutes";
 
 const Home = () => {
 
-  const [todo , setTodo] = useContext(TodoContext)
+  const [todo, setTodo,importantTodo,setImportantTodo,favoriteTodo,setFavoriteTodo,completedTodo,setCompletedTodo] = useContext(TodoContext)
 
   const navigate = useNavigate()
   const homeHandler = () => {
