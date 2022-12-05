@@ -1,18 +1,31 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../../Context/TodoContext";
+import { useSnackbar } from "notistack";
 
 const AllTodo = () => {
-  const [todo, setTodo,importantTodo,setImportantTodo,favoriteTodo,setFavoriteTodo,completedTodo,setCompletedTodo] = useContext(TodoContext);
+  const [
+    todo,
+    setTodo,
+    importantTodo,
+    setImportantTodo,
+    favoriteTodo,
+    setFavoriteTodo,
+    completedTodo,
+    setCompletedTodo,
+  ] = useContext(TodoContext);
 
-  
+  const {enqueueSnackbar} = useSnackbar();
 
-  const importantHandler = (e,title) => {
-    console.log(title)
+  const importantHandler = (e, title) => {
+    console.log(title);
     e.preventDefault();
-    let Important = todo.filter(item => item.title === title);
-    // setImportantTodo(Important);
-    console.log(Important)
-  }
+    if (importantTodo.find((item) => item.topic === title)) {
+      enqueueSnackbar("Sorry already in important", { variant: "error" });
+    } else {
+      let Important = todo.filter((item) => item.topic === title);
+      setImportantTodo(Important);
+    }
+  };
 
   return (
     <div className="body-content">
@@ -33,13 +46,18 @@ const AllTodo = () => {
                       <p className="created-at">Created at : {get.createdOn}</p>
                       <h3>{get.topic}</h3>
                       <p className="about-card">{get.about}</p>
-                      <p className="created-at">Must Complete On : {get.mustCompleteTime}</p>
+                      <p className="created-at">
+                        Must Complete On : {get.mustCompleteTime}
+                      </p>
                     </div>
                   </div>
                   <div className="col-md-3">
                     <ul>
                       <li className="card-li">
-                        <p className="card-p" onClick={(e) => importantHandler(e,get.topic)}>
+                        <p
+                          className="card-p"
+                          onClick={(e) => importantHandler(e, get.topic)}
+                        >
                           <span>
                             <i class="fa-solid fa-bookmark"></i>
                           </span>{" "}

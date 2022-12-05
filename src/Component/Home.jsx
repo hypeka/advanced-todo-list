@@ -14,6 +14,7 @@ const Home = () => {
   }
 
   const allCount = todo.length;
+  const importantCount = importantTodo.length;
 
   return (
     <>
@@ -49,7 +50,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-solid fa-bookmark"></i>
                         </span>
-                        Important <span className="span-count"></span>
+                        Important {importantTodo.length > 0 && <span className="span-count">{importantCount}</span>}
                       </NavLink>
                     </li>
                     <li>
