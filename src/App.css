@@ -73,7 +73,14 @@ li{
   background-color: var(--secondary-color);
 }
 .link-to{
-
+  color: var(--white-color) !important;
+}
+.link-to:hover{
+  background-color: var(--tertiary-color);
+  transition: width 1s;
+  padding:6px 12px ;
+  width: 30px;
+  border-radius: 8px;
 }
 .left-body{
   padding: 26px ;
@@ -86,6 +93,9 @@ li{
   width: 40px;
   border-radius: 50%;
 }
+.left-body p{
+  margin-bottom: 16px;
+}
 .profile-img img{
   height: 30px;
   width: 30px;
@@ -95,5 +105,20 @@ li{
   margin-top: 5px;
 }
 .left-body-content{
-
+  line-height: 2.5;
 }
+.span-icon{
+  margin-right: 8px;
+}
+.body-content{
+  padding: 26px;
+}
+.title{
+  text-align: center;
+}
+.create-btn{
+  text-align: center;
+}
+
+
+  
