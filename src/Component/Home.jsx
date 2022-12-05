@@ -1,14 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import image from "../Assests/profile.jpg";
+import { TodoContext } from "../Context/TodoContext";
 import HomeRoutes from "../Routes/HomeRoutes";
 
 const Home = () => {
+
+  const [todo , setTodo] = useContext(TodoContext)
 
   const navigate = useNavigate()
   const homeHandler = () => {
     navigate('/');
   }
+
+  const allCount = todo.length;
 
   return (
     <>
@@ -36,7 +41,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-solid fa-folder"></i>
                         </span>
-                        All <span className="span-count"></span>
+                        All {todo.length > 0 && <span className="span-count">{allCount}</span>}
                       </NavLink>
                     </li>
                     <li>

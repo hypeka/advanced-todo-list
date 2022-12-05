@@ -31,7 +31,7 @@ const CreateTodo = () => {
         topic:topic,
         about:about,
         mustCompleteTime:startDate,
-        createdOn: date,
+        createdOn: date.toLocaleDateString(),
       }]);
       Swal.fire({
         title: "Wow",
@@ -41,7 +41,7 @@ const CreateTodo = () => {
         timerProgressBar: true,
         timer: 5000,
       });
-      navigate('/');
+      navigate('/all-todo');
     }
   };
 
@@ -71,7 +71,7 @@ const CreateTodo = () => {
               name=""
               id=""
               cols="60"
-              rows="2"
+              rows="2" 
               placeholder="write description about ..."
               value={about}
               onChange={(e) => setAbout(e.target.value)}

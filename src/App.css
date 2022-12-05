@@ -137,6 +137,12 @@ a{
 .span-a{
   font-size: 35px!important;
 }
+.span-count{
+  background-color: var(--tertiary-color);
+  border-radius: 50%;
+  font-size: 10px;
+  padding: 2px 6px;
+}
 .connect{
   margin-top: 46px;
 }
@@ -150,6 +156,41 @@ a{
   margin-top: 26px;
   cursor: pointer;
 }
-
+.todo-main-card{
+  height: 210px;
+  overflow-y: scroll ;
+}
+.todo-card{
+  padding: 8px 26px;
+  border: 1px solid var(--white-color);
+  margin: 8px 24px 8px 0px;
+  cursor: pointer;
+}
+.card-content{
+  
+}
+.card-content h3{
+  margin-bottom: 0px !important;
+}
+.created-at{
+  font-style: italic;
+  font-size: 12px;
+  opacity: 70%;
+  letter-spacing: 1px;
+}
+.about-card{
+  font-size: 12px;
+}
+.card-p{
+  font-size: 12px;
+  cursor: pointer;
+}
+.card-li{
+  line-height: 2.2;
+}
+.card-p span{
+  color: var(--tertiary-color);
+  margin-right: 6px;
+}
 
   
