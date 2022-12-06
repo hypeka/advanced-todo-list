@@ -62,6 +62,22 @@ const AllTodo = () => {
     // }
   }
 
+  const removeHandler = (e, title) => {
+    e.preventDefault();
+    console.log("I am clicked")
+    let temp = [...todo];
+    let tempData = temp.filter(item => item.topic !== title);
+    setTodo(tempData);
+    Swal.fire({
+      title: "Removed",
+      text: "TODO has been removed to successfully",
+      icon: "success",
+      confirmButtonText: "OK",
+      timerProgressBar: true,
+      timer: 5000,
+    });
+  }
+
   return (
     <div className="body-content">
       <div className="title">
@@ -113,6 +129,14 @@ const AllTodo = () => {
                             <i class="fa-solid fa-check"></i>
                           </span>
                           Complete
+                        </p>
+                      </li>
+                      <li className="card-li">
+                        <p className="card-p" onClick={(e)=>removeHandler(e,get.topic)}>
+                          <span>
+                          <i class="fa-solid fa-trash"></i>
+                          </span>
+                          Remove
                         </p>
                       </li>
                     </ul>
