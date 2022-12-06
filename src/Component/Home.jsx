@@ -15,6 +15,7 @@ const Home = () => {
 
   const allCount = todo.length;
   const importantCount = importantTodo.length;
+  const favoriteCount = favoriteTodo.length;
 
   return (
     <>
@@ -58,7 +59,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-sharp fa-solid fa-heart"></i>
                         </span>
-                        Favorite<span className="span-count"></span>
+                        Favorite {favoriteTodo.length > 0 && <span className="span-count">{favoriteCount}</span>}
                       </NavLink>
                     </li>
                     <li>

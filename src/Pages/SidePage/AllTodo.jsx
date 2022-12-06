@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../../Context/TodoContext";
 import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AllTodo = () => {
+
+  const navigate = useNavigate();
+
   const [
     todo,
     setTodo,
@@ -14,18 +19,48 @@ const AllTodo = () => {
     setCompletedTodo,
   ] = useContext(TodoContext);
 
+  console.log("favoriteTodo : ",favoriteTodo)
+
   const {enqueueSnackbar} = useSnackbar();
 
   const importantHandler = (e, title) => {
-    console.log(title);
     e.preventDefault();
     if (importantTodo.find((item) => item.topic === title)) {
       enqueueSnackbar("Sorry already in important", { variant: "error" });
     } else {
-      let Important = todo.filter((item) => item.topic === title);
-      setImportantTodo(Important);
+      let Important = todo.find((item) => item.topic === title);
+      setImportantTodo([...importantTodo,Important]);
+      Swal.fire({
+        title: "Important",
+        text: "TODO has been added to important",
+        icon: "success",
+        confirmButtonText: "OK",
+        timerProgressBar: true,
+        timer: 5000,
+      });
+      navigate('/important-todo')
     }
   };
+
+  const favoriteHandler = (e,title) =>{
+    e.preventDefault();
+    // if(favoriteTodo.find((item) => item.topic === title)){
+    //   enqueueSnackbar("Sorry already in favorite", { variant: "error" });
+    // }else{
+      console.log("I am present")
+      let favorite = todo.find((item) => item.topic === title);
+      setFavoriteTodo([...favoriteTodo,favorite])
+      Swal.fire({
+        title: "Favorite",
+        text: "TODO has been added to favorite",
+        icon: "success",
+        confirmButtonText: "OK",
+        timerProgressBar: true,
+        timer: 5000,
+      });
+      navigate('/favorite-todo')
+    // }
+  }
 
   return (
     <div className="body-content">
@@ -65,7 +100,7 @@ const AllTodo = () => {
                         </p>
                       </li>
                       <li className="card-li">
-                        <p className="card-p">
+                        <p className="card-p" onClick={(e) => favoriteHandler(e,get.topic)}>
                           <span>
                             <i class="fa-sharp fa-solid fa-heart"></i>
                           </span>{" "}
