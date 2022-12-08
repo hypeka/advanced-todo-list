@@ -16,6 +16,7 @@ const Home = () => {
   const allCount = todo.length;
   const importantCount = importantTodo.length;
   const favoriteCount = favoriteTodo.length;
+  const completeCount = completedTodo.length;
 
   return (
     <>
@@ -43,7 +44,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-solid fa-folder"></i>
                         </span>
-                        All {todo.length > 0 && <span className="span-count">{allCount}</span>}
+                        {/* All {todo.length > 0 && <span className="span-count">{allCount}</span>} */}
                       </NavLink>
                     </li>
                     <li>
@@ -51,7 +52,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-solid fa-bookmark"></i>
                         </span>
-                        Important {importantTodo.length > 0 && <span className="span-count">{importantCount}</span>}
+                        {/* Important {importantTodo.length > 0 && <span className="span-count">{importantCount}</span>} */}
                       </NavLink>
                     </li>
                     <li>
@@ -59,7 +60,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-sharp fa-solid fa-heart"></i>
                         </span>
-                        Favorite {favoriteTodo.length > 0 && <span className="span-count">{favoriteCount}</span>}
+                        {/* Favorite {favoriteTodo.length > 0 && <span className="span-count">{favoriteCount}</span>} */}
                       </NavLink>
                     </li>
                     <li>
@@ -67,7 +68,7 @@ const Home = () => {
                         <span className="span-icon">
                           <i class="fa-solid fa-check"></i>
                         </span>
-                        Completed<span className="span-count"></span>
+                        {/* Completed{completedTodo.length > 0 && <span className="span-count">{completeCount}</span>} */}
                       </NavLink>
                     </li>
                   </ul>

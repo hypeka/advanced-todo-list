@@ -61,7 +61,7 @@ const CreateTodo = () => {
               type="text"
               placeholder="topic here ..."
               value={topic}
-              onChange={(e) => setTopic(e.target.value)}
+              // onChange={(e) => setTopic(e.target.value)}
             />
           </div>
           <div className="create-input">
@@ -74,7 +74,7 @@ const CreateTodo = () => {
               rows="2" 
               placeholder="write description about ..."
               value={about}
-              onChange={(e) => setAbout(e.target.value)}
+              // onChange={(e) => setAbout(e.target.value)}
             ></textarea>
           </div>
           <div className="create-input">
@@ -82,11 +82,11 @@ const CreateTodo = () => {
             <br />
             <DatePicker
               selected={startDate}
-              onChange={(date: Date) => setStartDate(date)}
+              // onChange={(date: Date) => setStartDate(date)}
             />
           </div>
           <div className="create-btn">
-            <button onClick={(e) => createTodoHandler(e)}>Create TODO</button>
+            {/* <button onClick={(e) => createTodoHandler(e)}>Create TODO</button> */}
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ export const TodoProvider = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("todo")) {
-      setTodo(JSON.parse(localStorage.getItem("todo")));
+      setTodo(JSON.parse(localStorage.getItem("todo") ));
     }
   }, []);
   useEffect(() => {
